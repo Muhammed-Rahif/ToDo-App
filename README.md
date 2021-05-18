@@ -1,3 +1,31 @@
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://muhammed-rahif.github.io/ToDo-App/" target="_blank">
+    <img src="public/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">ToDo App</h3>
+
+  <p align="center">
+    An awesome ToDo app made with React..!
+    <br />
+    <a href="https://muhammed-rahif.github.io/ToDo-App/"><strong>Open Test website »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Muhammed-Rahif/ToDo-App/">Github Link</a>
+    ·
+    <a href="https://github.com/Muhammed-Rahif/ToDo-App/issues/">Report Bug</a>
+    ·
+    <a href="https://github.com/Muhammed-Rahif/ToDo-App/pulls/">Contribute to Project</a>
+  </p>
+</p>
+
+
+<hr>
+<hr>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
