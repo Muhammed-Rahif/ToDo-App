@@ -4,6 +4,10 @@
 .accordion-body {
   padding: .75rem;
 }
+.hr{
+  width:25%;
+  margin: auto;
+}
 @media (max-width: 767px) {
   .accordion-body {
     padding: 0rem;

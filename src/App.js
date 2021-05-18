@@ -25,7 +25,7 @@ function App() {
             <button
               type="submit"
               className="shadow-3 btn btn-primary"
-              onSubmit={e=>{
+              onSubmit={e => {
                 e.preventDefault();
               }}
               onClick={(e) => {
@@ -87,7 +87,9 @@ function App() {
           })}
         </div>
         <div className="col-md-12">
-          <table className="shadow-1-strong table table-hover table-responsive table-bordered mt-5 mb-5">
+          <h4 className="text-center">Active ToDos</h4>
+          <hr className="hr" />
+          <table className="shadow-1-strong table table-hover table-responsive table-bordered mt-2 mb-5">
             <thead>
               <tr>
                 <th scope="col">Time</th>
