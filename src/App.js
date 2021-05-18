@@ -5,7 +5,7 @@ import "./App.css";
 function App() {
   const [textField, setTextField] = useState("");
   const [toDos, setToDos] = useState([]);
-  const [canceledToDos, setDeletedToDos] = useState([]);
+  const [canceledToDos, setRemovedToDos] = useState([]);
 
   return (
     <div className="container">
@@ -69,8 +69,8 @@ function App() {
                     <label className="btn btn-success mr-1" htmlFor={`btn-check-${itm.id}`}><i className="shadow-3 fas fa-check"></i></label>
                     <button type="button" className="btn btn-danger"
                       onClick={() => {
-                        if (window.confirm("Are you sure you want to delete this ?")) {
-                          setDeletedToDos((canceledToDos) => [...canceledToDos, itm]);
+                        if (window.confirm("Are you sure you want to remove this ?")) {
+                          setRemovedToDos((canceledToDos) => [...canceledToDos, itm]);
                           setToDos(toDos.filter(obj => {
                             if (obj.id !== itm.id) {
                               return obj;
@@ -130,7 +130,7 @@ function App() {
                   aria-expanded="false"
                   aria-controls="collapseOne"
                 >
-                  Deleted To Dos
+                  Removed To Dos
                 </button>
               </h2>
               <div
