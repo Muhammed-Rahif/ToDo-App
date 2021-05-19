@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import moment from "moment";
+import store from "store";
 import "./App.css";
+const storeKey = "ToDo-App-Key"
 
 function App() {
   const [textField, setTextField] = useState("");
   const [toDos, setToDos] = useState([]);
-  const [canceledToDos, setRemovedToDos] = useState([]);
+  const [removedToDos, setRemovedToDos] = useState([]);
+
+  useEffect(() => {
+    setToDos(store.get(storeKey).toDos);
+    setRemovedToDos(store.get(storeKey).removedToDos);
+  }, []);
+
+  useEffect(() => {
+    store.set(storeKey, { toDos: toDos, removedToDos: removedToDos })
+  }, [toDos, removedToDos]);
 
   return (
     <div className="container">
@@ -70,7 +81,7 @@ function App() {
                     <button type="button" className="btn btn-danger"
                       onClick={() => {
                         if (window.confirm("Are you sure you want to remove this ?")) {
-                          setRemovedToDos((canceledToDos) => [...canceledToDos, itm]);
+                          setRemovedToDos((removedToDos) => [...removedToDos, itm]);
                           setToDos(toDos.filter(obj => {
                             if (obj.id !== itm.id) {
                               return obj;
@@ -151,7 +162,7 @@ function App() {
                       </tr>
                     </thead>
                     <tbody>
-                      {canceledToDos.map((itm) => {
+                      {removedToDos.map((itm) => {
                         return (
                           <tr key={itm.id}>
                             <th scope="row">{itm.time}</th>
