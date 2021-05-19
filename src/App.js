@@ -10,8 +10,10 @@ function App() {
   const [removedToDos, setRemovedToDos] = useState([]);
 
   useEffect(() => {
-    setToDos(store.get(storeKey).toDos);
-    setRemovedToDos(store.get(storeKey).removedToDos);
+    if(typeof store.get(storeKey) !== "undefined"){
+      setToDos(store.get(storeKey).toDos);
+      setRemovedToDos(store.get(storeKey).removedToDos);
+    }
   }, []);
 
   useEffect(() => {
