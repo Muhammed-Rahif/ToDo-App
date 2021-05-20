@@ -11,7 +11,7 @@
   <p align="center">
     An awesome ToDo app made with React..!
     <br />
-    <a href="https://muhammed-rahif.github.io/ToDo-App/"><strong>Open Test website »</strong></a>
+    <a href="https://muhammed-rahif.github.io/ToDo-App/"><strong>Open website »</strong></a>
     <br />
     <br />
     <a href="https://github.com/Muhammed-Rahif/ToDo-App/">Github Link</a>
