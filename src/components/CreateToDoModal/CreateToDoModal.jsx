@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./CreateToDoModal.css";
 import moment from "moment";
 import { animated } from "react-spring";
+import { bgColors } from "../../helpers/constants";
 
 function CreateToDoModal({ onClose, onSubmit, modelStyle = {}, bgStyle = {} }) {
   const [title, setTitle] = useState("");
@@ -18,6 +19,7 @@ function CreateToDoModal({ onClose, onSubmit, modelStyle = {}, bgStyle = {} }) {
             description,
             modified: new Date(),
             formatedModDate: moment().format("lll"),
+            boxColor: bgColors[Math.floor(Math.random() * bgColors.length)],
           });
           setTitle("");
           setDescription("");

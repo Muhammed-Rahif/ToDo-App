@@ -14,7 +14,7 @@ function ToDoCard({
       className="is-flex is-justify-content-center is-align-items-center is-flex-direction-column m-5 is-relative"
     >
       <div
-        style={{ backgroundColor: boxColor }}
+        style={{ background: boxColor }}
         className="is-light is-relative tile box is-flex is-justify-content-center is-align-items-flex-start is-flex-direction-column"
       >
         <h1 className="title is-4">{title}</h1>

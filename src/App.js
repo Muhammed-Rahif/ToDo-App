@@ -18,19 +18,21 @@ function App() {
       {toDosList.length > 0 ? (
         <Transition
           items={toDosList}
-          from={{ scale: 0.7, opacity: 0 }}
-          enter={{ scale: 1, opacity: 1 }}
-          config={{ duration: 500, easing: easeBackInOut.overshoot(1.7) }}
+          from={{
+            scale: 0.7,
+            opacity: 0,
+            y: window.innerHeight * 0.7,
+          }}
+          enter={{
+            scale: 1,
+            opacity: 1,
+            y: 0,
+          }}
+          config={{ duration: 750, easing: easeBackInOut.overshoot(1.7) }}
           trail={100}
         >
           {(style, toDo) =>
-            toDo && (
-              <ToDoCard
-                style={{ ...style, zIndex: 30 }}
-                {...toDo}
-                boxColor="#ebfffc"
-              />
-            )
+            toDo && <ToDoCard style={{ ...style, zIndex: 30 }} {...toDo} />
           }
         </Transition>
       ) : (
@@ -100,11 +102,10 @@ function App() {
       <Spring
         from={{ scale: 0.7, opacity: 0 }}
         to={{ scale: 1, opacity: 1 }}
-        delay={650}
+        delay={800}
         config={{
           duration: 500,
           easing: easeBackInOut.overshoot(2.5),
-          delay: 1000,
         }}
       >
         {styles => (
