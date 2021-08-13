@@ -67,7 +67,7 @@ function CreateToDoModal({ onClose, onSubmit, modelStyle = {}, bgStyle = {} }) {
             >
               Cancel
             </button>
-            <button className="button is-success" type="submit">
+            <button className="button is-primary" type="submit">
               Save To Do
             </button>
           </footer>
