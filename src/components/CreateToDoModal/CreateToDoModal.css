@@ -1,0 +1,11 @@
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.modal-card,
+.modal-content {
+  margin: 0 0.75rem;
+}
