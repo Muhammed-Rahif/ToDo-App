@@ -3,6 +3,7 @@ import "./CreateToDoModal.css";
 import moment from "moment";
 import { animated } from "react-spring";
 import { bgColors } from "../../helpers/constants";
+import { v4 as uuidv4 } from "uuid";
 
 function CreateToDoModal({ onClose, onSubmit, modelStyle = {}, bgStyle = {} }) {
   const [title, setTitle] = useState("");
@@ -20,6 +21,7 @@ function CreateToDoModal({ onClose, onSubmit, modelStyle = {}, bgStyle = {} }) {
             modified: new Date(),
             formatedModDate: moment().format("lll"),
             boxColor: bgColors[Math.floor(Math.random() * bgColors.length)],
+            id: uuidv4(),
           });
           setTitle("");
           setDescription("");
