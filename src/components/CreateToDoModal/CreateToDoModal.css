@@ -8,6 +8,7 @@ form {
 .modal-card,
 .modal-content {
   margin: 0 0.75rem;
+  pointer-events: all;
 }
 
 .modal {
