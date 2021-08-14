@@ -22,6 +22,7 @@ function CreateToDoModal({ onClose, onSubmit, modelStyle = {}, bgStyle = {} }) {
             formatedModDate: moment().format("lll"),
             boxColor: bgColors[Math.floor(Math.random() * bgColors.length)],
             id: uuidv4(),
+            finished: false,
           });
           setTitle("");
           setDescription("");
@@ -47,6 +48,7 @@ function CreateToDoModal({ onClose, onSubmit, modelStyle = {}, bgStyle = {} }) {
               value={title}
               onChange={e => setTitle(e.target.value)}
               required
+              maxLength={120}
             />
             <textarea
               className="textarea mt-5"

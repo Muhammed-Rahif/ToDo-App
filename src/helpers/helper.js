@@ -17,4 +17,15 @@ const addNewToDo = toDoData => {
 
 const getToDos = () => store.get(TODOS_LOCALSTORAGE_KEY) || [];
 
-export { addNewToDo, getToDos };
+const dltToDo = id =>
+  store.set(
+    TODOS_LOCALSTORAGE_KEY,
+    getToDos().filter(toDo => toDo.id !== id)
+  );
+
+const changeToDoFinished = (id, finished) =>
+  store.update(TODOS_LOCALSTORAGE_KEY, toDos =>
+    toDos.map(toDo => (toDo.id === id ? { ...toDo, finished } : toDo))
+  );
+
+export { addNewToDo, getToDos, dltToDo, changeToDoFinished };

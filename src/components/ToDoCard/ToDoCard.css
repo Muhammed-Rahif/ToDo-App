@@ -1,3 +1,20 @@
 section .box {
   width: 100%;
 }
+
+.w-100 {
+  width: 100%;
+}
+
+.columns {
+  margin: 0;
+  margin-bottom: 0 !important;
+}
+
+button {
+  font-family: "Gowun Dodum", sans-serif;
+}
+
+.description {
+  margin-bottom: 0.5rem !important;
+}

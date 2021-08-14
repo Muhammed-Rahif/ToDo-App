@@ -13,6 +13,10 @@ function App() {
   const [toDosList, setToDosList] = useState(getToDos());
   const [showNotification, setShowNotification] = useState(true);
 
+  const onToDoDeleteHandler = id => {
+    setToDosList(toDosList.filter(toDo => toDo.id !== id));
+  };
+
   return (
     <div className="container">
       {toDosList.length > 0 ? (
@@ -22,17 +26,33 @@ function App() {
             scale: 0.7,
             opacity: 0,
             y: window.innerHeight * 0.7,
+            height: "0px",
           }}
           enter={{
             scale: 1,
             opacity: 1,
             y: 0,
+            height: "auto",
+          }}
+          leave={{
+            scale: 0.7,
+            opacity: 0,
+            filter: "blur(4px)",
+            height: "min-content",
           }}
           config={{ duration: 750, easing: easeBackInOut.overshoot(1.7) }}
           trail={100}
         >
-          {(style, toDo) =>
-            toDo && <ToDoCard style={{ ...style, zIndex: 30 }} {...toDo} />
+          {(style, toDo, t, indx) =>
+            toDo && (
+              <ToDoCard
+                style={{ ...style, zIndex: 30 }}
+                {...toDo}
+                key={indx}
+                onRemove={onToDoDeleteHandler}
+                delay={250 * indx + 500}
+              />
+            )
           }
         </Transition>
       ) : (
@@ -55,8 +75,8 @@ function App() {
               </div>
               <div className="message-body">
                 <strong>
-                  You didn't created atleast one to do... Maybe you are first
-                  time here.. Don't worry..!{" "}
+                  You didn't created atleast one to do... Maybe you are first time here.. Don't
+                  worry..!{" "}
                   <a
                     href="./"
                     onClick={e => {
@@ -102,7 +122,7 @@ function App() {
       <Spring
         from={{ scale: 0.7, opacity: 0 }}
         to={{ scale: 1, opacity: 1 }}
-        delay={800}
+        delay={1450}
         config={{
           duration: 500,
           easing: easeBackInOut.overshoot(2.5),
