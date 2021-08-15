@@ -11,7 +11,6 @@ import { easeBackInOut } from "d3-ease";
 function App() {
   const [createToDoModel, setCreateToDoModel] = useState(false);
   const [toDosList, setToDosList] = useState(getToDos());
-  const [showNotification, setShowNotification] = useState(true);
 
   const onToDoDeleteHandler = id => {
     setToDosList(toDosList.filter(toDo => toDo.id !== id));
@@ -58,38 +57,44 @@ function App() {
       ) : (
         <Spring
           from={{
-            scale: 0.7,
+            fontSize: "0.7rem",
             opacity: 0,
+            clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
           }}
-          to={{ scale: 1, opacity: 1 }}
-          config={{ duration: 500, easing: easeBackInOut.overshoot(1.7) }}
+          to={{
+            fontSize: "1.4rem",
+            opacity: 1,
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          }}
+          config={{ duration: 750, easing: easeBackInOut.overshoot(1.7) }}
         >
           {styles => (
-            <animated.article
-              className="message mt-5 is-warning mr-5 ml-5"
-              style={styles}
-              onClick={() => setShowNotification(!showNotification)}
+            <strong
+              className=" mt-5 is-warning mr-5 ml-5 has-text-centered is-capitalized"
+              style={{
+                fontSize: "1.2rem",
+                textAlign: "center",
+                margin: "0 !important",
+                height: "100vh",
+                display: "black",
+                top: "38vh",
+                position: "relative",
+              }}
             >
-              <div className="message-header">
-                <p>You don't have any todos..!</p>
-              </div>
-              <div className="message-body">
-                <strong>
-                  You didn't created atleast one to do... Maybe you are first time here.. Don't
-                  worry..!{" "}
-                  <a
-                    href="./"
-                    onClick={e => {
-                      e.preventDefault();
-                      setCreateToDoModel(!createToDoModel);
-                    }}
-                  >
-                    Create one
-                  </a>{" "}
-                  to do now..
-                </strong>
-              </div>
-            </animated.article>
+              <animated.p style={styles}>
+                No to-do found!{"\t"}
+                <a
+                  href="./"
+                  onClick={e => {
+                    e.preventDefault();
+                    setCreateToDoModel(!createToDoModel);
+                  }}
+                  style={{ textDecoration: "underline" }}
+                >
+                  Create one
+                </a>
+              </animated.p>
+            </strong>
           )}
         </Spring>
       )}
@@ -122,7 +127,7 @@ function App() {
       <Spring
         from={{ scale: 0.7, opacity: 0 }}
         to={{ scale: 1, opacity: 1 }}
-        delay={1450}
+        delay={toDosList.length === 0 ? 500 : 1450}
         config={{
           duration: 500,
           easing: easeBackInOut.overshoot(2.5),
