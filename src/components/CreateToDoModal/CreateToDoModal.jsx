@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./CreateToDoModal.css";
 import moment from "moment";
-import { animated, Spring, Transition } from "react-spring";
+import { animated, Spring } from "react-spring";
 import { bgColors } from "../../helpers/constants";
 import { v4 as uuidv4 } from "uuid";
 import { easeBackInOut } from "d3-ease";
