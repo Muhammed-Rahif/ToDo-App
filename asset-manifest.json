@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/ToDo-App/static/css/main.bd01077e.chunk.css",
-    "main.js": "/ToDo-App/static/js/main.0b6cdb54.chunk.js",
-    "main.js.map": "/ToDo-App/static/js/main.0b6cdb54.chunk.js.map",
+    "main.css": "/ToDo-App/static/css/main.25a61e6a.chunk.css",
+    "main.js": "/ToDo-App/static/js/main.75d7827c.chunk.js",
+    "main.js.map": "/ToDo-App/static/js/main.75d7827c.chunk.js.map",
     "runtime-main.js": "/ToDo-App/static/js/runtime-main.4c26a383.js",
     "runtime-main.js.map": "/ToDo-App/static/js/runtime-main.4c26a383.js.map",
     "static/css/2.f9dc9d5b.chunk.css": "/ToDo-App/static/css/2.f9dc9d5b.chunk.css",
-    "static/js/2.e0a12acb.chunk.js": "/ToDo-App/static/js/2.e0a12acb.chunk.js",
-    "static/js/2.e0a12acb.chunk.js.map": "/ToDo-App/static/js/2.e0a12acb.chunk.js.map",
+    "static/js/2.06924c60.chunk.js": "/ToDo-App/static/js/2.06924c60.chunk.js",
+    "static/js/2.06924c60.chunk.js.map": "/ToDo-App/static/js/2.06924c60.chunk.js.map",
     "index.html": "/ToDo-App/index.html",
     "service-worker.js": "/ToDo-App/service-worker.js",
     "service-worker.js.map": "/ToDo-App/service-worker.js.map",
     "static/css/2.f9dc9d5b.chunk.css.map": "/ToDo-App/static/css/2.f9dc9d5b.chunk.css.map",
-    "static/css/main.bd01077e.chunk.css.map": "/ToDo-App/static/css/main.bd01077e.chunk.css.map",
-    "static/js/2.e0a12acb.chunk.js.LICENSE.txt": "/ToDo-App/static/js/2.e0a12acb.chunk.js.LICENSE.txt"
+    "static/css/main.25a61e6a.chunk.css.map": "/ToDo-App/static/css/main.25a61e6a.chunk.css.map",
+    "static/js/2.06924c60.chunk.js.LICENSE.txt": "/ToDo-App/static/js/2.06924c60.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4c26a383.js",
     "static/css/2.f9dc9d5b.chunk.css",
-    "static/js/2.e0a12acb.chunk.js",
-    "static/css/main.bd01077e.chunk.css",
-    "static/js/main.0b6cdb54.chunk.js"
+    "static/js/2.06924c60.chunk.js",
+    "static/css/main.25a61e6a.chunk.css",
+    "static/js/main.75d7827c.chunk.js"
   ]
 }
