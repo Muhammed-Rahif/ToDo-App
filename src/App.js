@@ -102,10 +102,10 @@ function App({ background = "" }) {
         </Spring>
       )}
       <Spring
-        from={{ scale: 1, opacity: 0 }}
+        from={{ scale: 1, opacity: 0, y: 550 }}
         to={{
           opacity: createToDoModel ? 1 : 0,
-          y: createToDoModel ? 0 : 500,
+          y: createToDoModel ? 0 : 550,
         }}
         config={{ duration: 500, easing: easeBackInOut.overshoot(1.7) }}
       >
@@ -122,6 +122,7 @@ function App({ background = "" }) {
               setToDosList(prev => [toDoData, ...prev]);
             }}
             background={background}
+            active={createToDoModel}
           />
         )}
       </Spring>
@@ -134,9 +135,7 @@ function App({ background = "" }) {
           easing: easeBackInOut.overshoot(2.5),
         }}
       >
-        {styles => (
-          <FAB style={{ styles }} onClick={() => setCreateToDoModel(!createToDoModel)} />
-        )}
+        {styles => <FAB style={styles} onClick={() => setCreateToDoModel(!createToDoModel)} />}
       </Spring>
     </div>
   );
