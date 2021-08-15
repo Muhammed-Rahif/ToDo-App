@@ -8,7 +8,7 @@ import { addNewToDo, getToDos } from "./helpers/helper";
 import { Spring, animated, Transition } from "react-spring";
 import { easeBackInOut } from "d3-ease";
 
-function App() {
+function App({ background = "" }) {
   const [createToDoModel, setCreateToDoModel] = useState(false);
   const [toDosList, setToDosList] = useState(getToDos());
 
@@ -21,10 +21,11 @@ function App() {
       {toDosList.length > 0 ? (
         <Transition
           items={toDosList}
+          initial={{ zIndex: "99" }}
           from={{
             scale: 0.7,
             opacity: 0,
-            y: window.innerHeight * 0.7,
+            y: -window.innerHeight * 0.7,
             height: "0px",
           }}
           enter={{
@@ -38,6 +39,8 @@ function App() {
             opacity: 0,
             filter: "blur(4px)",
             height: "min-content",
+            y: window.innerHeight * 1.7,
+            zIndex: "-99",
           }}
           config={{ duration: 750, easing: easeBackInOut.overshoot(1.7) }}
           trail={100}
@@ -99,11 +102,9 @@ function App() {
         </Spring>
       )}
       <Spring
-        from={{ scale: 0.7, opacity: 0 }}
+        from={{ scale: 1, opacity: 0 }}
         to={{
-          scale: createToDoModel ? 1 : 0.7,
           opacity: createToDoModel ? 1 : 0,
-          zIndex: createToDoModel ? 99 : -99,
           y: createToDoModel ? 0 : 500,
         }}
         config={{ duration: 500, easing: easeBackInOut.overshoot(1.7) }}
@@ -112,7 +113,6 @@ function App() {
           <CreateToDoModal
             bgStyle={{
               opacity: style.opacity,
-              zIndex: style.zIndex,
             }}
             modelStyle={style}
             onClose={() => setCreateToDoModel(false)}
@@ -121,6 +121,7 @@ function App() {
               setCreateToDoModel(false);
               setToDosList(prev => [toDoData, ...prev]);
             }}
+            background={background}
           />
         )}
       </Spring>
@@ -134,10 +135,7 @@ function App() {
         }}
       >
         {styles => (
-          <FAB
-            style={{ ...styles, zIndex: createToDoModel ? 30 : 70 }}
-            onClick={() => setCreateToDoModel(!createToDoModel)}
-          />
+          <FAB style={{ styles }} onClick={() => setCreateToDoModel(!createToDoModel)} />
         )}
       </Spring>
     </div>
