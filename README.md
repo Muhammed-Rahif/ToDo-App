@@ -22,7 +22,14 @@
 </p>
 
 <hr>
-<hr>
+
+## 📱️ Screenshots <a name = "screenshots"></a>
+
+<div align="center">
+  <img width="32.5%" src="screenshots/shot-1.png" alt="Shot 1" />
+  <img width="32.5%" src="screenshots/shot-2.png" alt="Shot 2" />
+  <img width="32.5%" src="screenshots/shot-3.png" alt="Shot 3" />
+</div>
 
 # Getting Started with Create React App
 
