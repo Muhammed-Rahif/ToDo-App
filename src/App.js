@@ -135,7 +135,13 @@ function App({ background = "" }) {
           easing: easeBackInOut.overshoot(2.5),
         }}
       >
-        {styles => <FAB style={styles} onClick={() => setCreateToDoModel(!createToDoModel)} />}
+        {styles => (
+          <FAB
+            changeIcon={createToDoModel}
+            style={styles}
+            onClick={() => setCreateToDoModel(!createToDoModel)}
+          />
+        )}
       </Spring>
     </div>
   );
