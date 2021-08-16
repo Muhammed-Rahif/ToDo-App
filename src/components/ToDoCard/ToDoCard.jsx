@@ -121,11 +121,25 @@ function ToDoCard({
                       }}
                       key={indx}
                     >
-                      <i
-                        className={`fas fa-${
-                          indx === 0 ? "trash" : toDoFinished ? "undo" : "check"
-                        }`}
-                      ></i>
+                      {indx === 0 ? (
+                        <i className="fas fa-trash"></i>
+                      ) : (
+                        <Spring
+                          from={{ rotate: 0 }}
+                          to={{ rotate: toDoFinished ? 360 : 0 }}
+                          config={{
+                            duration: 1500,
+                            easing: easeBackInOut.overshoot(2.5),
+                          }}
+                        >
+                          {style => (
+                            <animated.i
+                              style={style}
+                              className={`fas fa-${toDoFinished ? "undo" : "check"}`}
+                            ></animated.i>
+                          )}
+                        </Spring>
+                      )}
                     </animated.button>
                   ))}
                 </animated.div>

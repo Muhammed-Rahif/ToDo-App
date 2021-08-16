@@ -135,10 +135,10 @@ function App({ background = "" }) {
           easing: easeBackInOut.overshoot(2.5),
         }}
       >
-        {styles => (
+        {style => (
           <FAB
-            changeIcon={createToDoModel}
-            style={styles}
+            createToDoActive={createToDoModel}
+            style={style}
             onClick={() => setCreateToDoModel(!createToDoModel)}
           />
         )}
